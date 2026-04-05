@@ -1,3 +1,30 @@
+# 重要！！
+古いphp動かすときは、pcにデフォルトインストールしているphpと競合してしまって動かない場合もありうる（今回そうだった…）。
+
+- 変更前
+```json
+…
+"config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+},
+…
+```
+- 変更後（`platform`ってのを追加することでcomposerにphpのバージョンを指定できるんだって）
+```json
+…
+"config": {
+    "platform": {
+        "php": "8.2.30"
+    },
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+},
+…
+```
+
 # バージョン確認
 ```bash
 php artisan -V
